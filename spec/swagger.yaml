@@ -25,12 +25,12 @@ paths:
           description: Parameters in JSON
           required: true
           schema:
-            $ref: '#/definitions/ERCategorizationInput'
+            $ref: '#/definitions/CategorizationModel'
       responses:
         '200':
           description: successful operation
 definitions:
-  Categorization Input:
+  CategorizationModel:
     type: object
     properties:
       text:
