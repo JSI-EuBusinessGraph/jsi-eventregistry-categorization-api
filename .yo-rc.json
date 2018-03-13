@@ -1,0 +1,11 @@
+{
+  "generator-openapi-repo": {
+    "importExistingSpec": true,
+    "importedSpec": "JSI EventRegistry OpenAPI 2.0 specification.yaml",
+    "name": "JSI EventRegistry",
+    "repo": "JSI-EuBusinessGraph/jsi-eventregistry-categorization-api",
+    "splitSpec": false,
+    "samples": false,
+    "installSwaggerUI": true
+  }
+}
