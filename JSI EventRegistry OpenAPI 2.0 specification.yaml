@@ -1,0 +1,46 @@
+swagger: '2.0'
+info:
+  description: 'EventRegistry collects and analyzes news articles published by over 30,000 news publishers worldwide. The API is used to find the news or world events.'
+  version: 1.0.0
+  title: JSI EventRegistry API
+  contact:
+    email: gregor.leban@ijs.si
+host: analytics.eventregistry.org
+basePath: /api/v1
+schemes:
+  - http
+paths:
+  /categorize:
+    post:
+      summary: Categorize text by taxonomy
+      description: 'Categorize text by a categorization taxonomy: DMOZ taxonomy, News taxonomy (Business, Politics, Technology, Arts and Entertainment, Sports, Health, Science, Environment).'
+      operationId: categorize
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: Parameters in JSON
+          required: true
+          schema:
+            $ref: '#/definitions/ERCategorizationInput'
+      responses:
+        '200':
+          description: successful operation
+definitions:
+  Categorization Input:
+    type: object
+    properties:
+      text:
+        type: string
+      taxonomy:
+        type: string
+        enum: [
+          'mediaTopics',
+          'eventTypes'
+        ]
+externalDocs:
+  description: EventRegistry documentation
+  url: 'http://eventregistry.org/documentation'
